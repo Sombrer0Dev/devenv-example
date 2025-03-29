@@ -1,9 +1,0 @@
-[package]
-name = "advent_of_code_2024_rust"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-clap = { version = "4.0", features = ["derive"] }
-dotenv = { version = "0.15.0", features = ["cli"] }
-regex = "1.11.1"
