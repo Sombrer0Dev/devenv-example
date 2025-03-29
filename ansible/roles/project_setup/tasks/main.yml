@@ -1,0 +1,12 @@
+- name: Clone project repository
+  git:
+    repo: 'git@github.com:yourusername/myproject.git'
+    dest: "{{ ansible_env.HOME }}/myproject"
+
+- name: Build the Rust project
+  shell: |
+    source $HOME/.cargo/env
+    cargo build --release
+  args:
+    chdir: "{{ ansible_env.HOME }}/myproject"
+

@@ -1,0 +1,21 @@
+- name: Install Rustup
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  args:
+    creates: "{{ ansible_env.HOME }}/.cargo/bin/rustc"
+
+- name: Add cargo bin to PATH (optional)
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.bashrc"
+    line: 'export PATH="$HOME/.cargo/bin:$PATH"'
+    insertafter: EOF
+  when: ansible_env.SHELL.endswith('bash')
+
+- name: Install additional dev tools
+  dnf:
+    name:
+      - gcc
+      - clang
+      - pkg-config
+      - openssl-devel
+    state: present
+

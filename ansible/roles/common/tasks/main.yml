@@ -1,0 +1,15 @@
+- name: Update system packages
+  dnf:
+    name: '*'
+    state: latest
+
+- name: Install basic utilities
+  dnf:
+    name:
+      - git
+      - curl
+      - wget
+      - unzip
+      - make
+    state: present
+

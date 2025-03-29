@@ -21,6 +21,7 @@ use day06::solve_day6_2;
 use err::Error;
 use err::Result;
 
+use dotenv::dotenv;
 use std::env;
 use std::fs;
 
@@ -30,6 +31,7 @@ pub fn switch(day: i8, part: i8, sample: bool) -> Result<i64> {
     let input: String;
     let mut err: Error = Error::new(String::from(""));
 
+    dotenv().ok();
     let root_path = env::var("ROOT_PATH");
     match (root_path, sample) {
         (Ok(v), true) => {

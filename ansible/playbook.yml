@@ -1,0 +1,6 @@
+- hosts: local
+  become: yes
+  roles:
+    - common
+    - dev_packages
+    - project_setup
