@@ -1,9 +1,12 @@
+# Проект исследований инструментов воспроизведения окружений разработки
+
+
 | Инструмент    | Изоляция  |Воспроизводимость| Первый запуск | Запуск | Зависимости |
 --------------------------------------------------------------------------------------
 |   Vagrant     |   full    |  env based      |   1m 40s      |   5s   | VB          |
 | DevContainers |   full    |  env based      |   1m 50s      |   2s   | Docker      |
-| Nix Shell	    |  partial  |  full           |   20s	      |   0.5s | none        |
-| Ansible	    |  none     |  full           |	  30s	      |   0s   | none        |
+| Nix Shell	    |  partial  |  full           |   20s	        |   0.5s | none        |
+| Ansible	      |  none     |  full           |	  30s	        |   0s   | none        |
 
 
 System:
