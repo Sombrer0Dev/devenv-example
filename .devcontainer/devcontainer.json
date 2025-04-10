@@ -1,23 +1,15 @@
 {
-	"name": "Rust",
-	"build": {
-      "context": "..",
-	  "dockerfile": "Dockerfile"  // Use the Dockerfile in the devcontainer
-	},
-	
-	// Uncomment to use a volume for cargo cache persistence
-	"mounts": [
-	  {
-		"source": "devcontainer-cargo-cache-${devcontainerId}",
-		"target": "/usr/local/cargo",
-		"type": "volume"
-	  }
-	],
-  
-	// Run a command after the container is created (for example, to fetch dependencies automatically)
-	"postCreateCommand": "cargo build",
-  
-	// Customize user and other configurations as needed
-	"remoteUser": "vscode"
-  }
-  
+  "name": "Rust Devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace/advent-of-code-rust",
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "rust-lang.rust-analyzer"
+  ]
+}
+
