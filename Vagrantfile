@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
       echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
     fi
 
-    cd /vagrant
+    cd /vagrant/advent-of-code-2024-rust
     cargo build
   SHELL
 

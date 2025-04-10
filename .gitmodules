@@ -1,0 +1,6 @@
+[submodule "ripgrep"]
+	path = ripgrep
+	url = git@github.com:BurntSushi/ripgrep.git
+[submodule "advent-of-code-2024-rust"]
+	path = advent-of-code-2024-rust
+	url = git@github.com:Sombrer0Dev/advent-of-code-2024-rust.git
