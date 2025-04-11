@@ -3,3 +3,4 @@
   roles:
     - common
     - dev_packages
+    - project_setup

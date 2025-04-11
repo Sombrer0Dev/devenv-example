@@ -11,11 +11,10 @@
   when: ansible_env.SHELL.endswith('bash')
 
 - name: Install additional dev tools
-  dnf:
+  pacman:
     name:
       - gcc
       - clang
-      - pkg-config
-      - openssl-devel
+      - pkgconf
+      - openssl
     state: present
-

@@ -1,0 +1,18 @@
+- name: Teardown Rust development environment
+  hosts: all
+  become: true
+  tasks:
+    - name: Remove cargo and rustup installation
+      file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - "{{ ansible_env.HOME }}/.cargo"
+        - "{{ ansible_env.HOME }}/.rustup"
+
+    - name: Remove cargo PATH export from .bashrc
+      lineinfile:
+        path: "{{ ansible_env.HOME }}/.bashrc"
+        line: 'export PATH="$HOME/.cargo/bin:$PATH"'
+        state: absent
+      when: ansible_env.SHELL.endswith('bash')

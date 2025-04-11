@@ -1,10 +1,10 @@
 - name: Update system packages
-  dnf:
-    name: '*'
-    state: latest
+  pacman:
+    update_cache: yes
+    upgrade: yes
 
 - name: Install basic utilities
-  dnf:
+  pacman:
     name:
       - git
       - curl
@@ -12,4 +12,3 @@
       - unzip
       - make
     state: present
-
